@@ -1,5 +1,4 @@
-# git-cheatsheet
-Go-to Git commands
+20180411 - Git Cheat Sheet
 
 ## Basic workflow
 
@@ -67,3 +66,107 @@ Go-to Git commands
 - `git merge origin/master`: Merges `origin/master` into your local branch
 - `git push`: Pushes a local branch to the **origin** remote
   - `-u origin <branch_name>` Pushes on GitHub servers our local repo to a remote named "origin" and a branch named "master". The argument **-u** saves to **git push** the `origin <branch_name>` parameters.
+
+
+
+## Sort after this line !
+
+git pull origin master
+  Pulls from GitHub servers our repo after it has been accessed and modified by collaborators
+  This pulls down locally any changes that happened server side
+
+git diff HEAD
+  Shows difference between our version and a recent pulled one
+
+git reset HEAD filename
+  Unstages file changes in the staging area (HEAD is not mandatory I believe)
+git reset commit_SHA_firs7chars
+	Resets to a previous commit referring to its SHA point in the git log
+
+git checkout -- filename
+  GO-TO SAFETY NET !
+  Restores our files to the state they were in when we made our last commit ! Excellent
+
+git rm '*.txt'
+  Removes files from Git and the actual files from the disk
+
+
+git merge <branch name>
+  Merges the specified <branch name> with the one we are currently in
+
+
+git branch -d <branch name>
+  The argument -d stands for delete. Deletes the specified branch name.
+
+
+
+git branch [branchxyz]
+  Creates a new branch
+
+git checkout [branchxyz]
+  Switches to another branch
+
+git push origin [branchxyz]
+  Pushes a different branch instead of master
+
+git branch
+  Displays project's branches. Marks current branch with *
+
+git fetch
+  pull locally the files that have been updated on GitHub
+
+git merge origin/master master
+  ***NotSure*** merges the distant file I have just "fetched" with my
+  master
+
+git pull origin master
+  similar to (git fetch + git merge origin/master master)
+  this doesn't offer the possibility to examine what change have taken place
+  server side before merging them locally.
+
+inspired from https://github.com/Denyos/
+
+Commands:
+
+q |    exit git log!
+git log  |    List the commits and show which files have changed
+type "q" to exit git log
+git log --stat  |    Show addition information about the commits
+git diff id1 id2  |    Compare two commits
+git clone  |    Create a local copy/clone from the repository
+git config --global color.ui auto |    get colored diff output
+git checkout  |    Shows a previous version of the file. This is not a checkout to edit like in SVN or TFS!
+
+
+  Commands:
+
+ git reset --hard  |    Undo all changes! There is no rollback for this, so be carefull!
+  git checkout master  |    Restore the "Head" to the latest commit
+	git checkout HEAD filename | restore the staged file to its latest commit state aka HEAD !
+  git log --graph --oneline <branch1> <branch2>  |    Show a visual representation of the commit history within different branches
+
+ git checkout -b new_branch_name (an excellent shortcut)
+  |    Creates a new branch and do a checkout on this branch in one call instead of git branch new_branch_name and git checkout new_branch_name
+
+  git merge branch1 branch2  |    Merge two branches, branch2 get merged into branch1
+  git branch -d name  |    Remove the branch with the specified name
+  git show commitId  |    Show the changes made in this commit compared to the previous version. This is working even after merging.
+
+
+
+  Commands:
+
+  git remote  |    Show all remote locations for the repository
+  git remote add origin url |     Add a new remote location for the repository. Origin is the default name to use when you create only one remote location. Url should be the https url to the github repository.
+  git remove -v  |    Outputs the remote locations with verbose information (fetch and push urls)
+  git push origin master  |    Push the master branch to the remote location origin.
+  git pull origin master  |    Get the master branch from the remote location origin.
+  git pull origin master  |    = Git fetch origin + git merge master origin/master
+
+#####   git fetch origin  |    Get the changes from the remote location into the (hidden?) origin/master branch
+
+
+
+
+
+git revert —no-commit <SHA>..HEAD
