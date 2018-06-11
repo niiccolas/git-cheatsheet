@@ -1,4 +1,4 @@
-#git-cheatsheet
+# git-cheatsheet
 Go-to Git commands
 
 ## Basic workflow
