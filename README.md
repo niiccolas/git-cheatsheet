@@ -1,4 +1,5 @@
-20180411 - Git Cheat Sheet
+#git-cheatsheet
+Go-to Git commands
 
 ## Basic workflow
 
