@@ -4,21 +4,20 @@ A collection of go-to Git commands arranged by use cases.
 ## Basic workflow
 
 - `git init  ` Create aka. initialize a new Git repository
-- `git status` Shows one of those 3 options :
+- `git status` Show one of 3 options:
   1. Tracked files in the **staging area**, ready to be commited to the repo
   2. Untracked files in the **working directory**, to be added to the staging area
   3. "nothing to commit, working tree clean"
-- `git add <file_name>`  Adds files from the working directory to the staging area so that Git starts tracking changes made to that file.
-  - `-A` adds ALL changed files
+- `git add <file_name>`  Add files from working directory to staging area where Git tracks changes.
+  - `-A` add **a**ll changed files
 - `git rm <file_name>` Remove file from Git and from the disk
 - `git diff` Compare the working directory with the staging area
     - `--staged` Compare the staging area with the repository
 - `git commit` Permanently store file changes from the staging area in the repository. A text editor launches for a **commit message** to be written according to the following best practices:
-
   1. Present tense, always.
   2. Subject line < 50 characters, followed by an empty line
   3. Self-contained 72-char. wrapped longer description addressing the following:
-     - **Why the change > What**. As is the case in any code commenting
+     - **Why the change over What**. As is the case in any code commenting
      - How does it address the problem?
      - Are there any side effects?
 
@@ -40,9 +39,9 @@ A collection of go-to Git commands arranged by use cases.
 -  `git reset --hard` **Undo all changes. No rollback, be careful!**
 - `git clean <optional_path>` Remove untracked files from the working tree AND directories (-d)
 
-  - `-n` Shows what would be removed, aka. "dry ru**n**"
+  - `-n` Show what would be removed, aka. "dry ru**n**"
   - `-d` Remove untracked directories
-  - `-f` Git will refuse to delete directories with .git sub directore or file unless a second -f is given
+  - `-f` Force delete of directories containing .git sub directory or file 
 
 
 
